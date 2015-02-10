@@ -1,67 +1,273 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Psygrammer.github.io by psygrammer</title>
+
+    <meta property="og:title" content="바벨피쉬" />
+    <meta property="og:description" content="사람의 언어, 기계의 언어 : 파이썬을 이용한 자연어처리" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://babelpish.github.io" />
+    <meta property="og:image" content="http://babelpish.github.io/img/logo.jpg" />
+    <title>Babelpish.github.io by babelPish</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="without-description">
-        <h1>Psygrammer.github.io</h1>
+
+    <!-- babel fish grow -->
+    <script>
+        var defaultExdays = 100;
+
+        function setCookie(cname,cvalue,exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname+"="+cvalue+"; "+expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var d = new Date();
+            var user=getCookie("username");
+            if (user != "") {
+
+                $("#age").text("바벨피쉬 : " + parseInt((d-user)/(24*3600*1000)) + " 살");
+                if(d - user > 30*24*60*60*1000){
+                    $("#babelfish").attr("src", "img/max.jpg");
+                }else{
+                    $("#babelfish").attr("src", "img/"+parseInt((d-user)/(24*3600*1000))+".jpg");
+                }
+                setCookie("username",user, defaultExdays);
+
+            }else {
+                //show dead fish
+                $("#babelfish").attr("src", "img/dead.jpg");
+                //dead or  first time
+                setCookie("username", d.getTime(), defaultExdays);
+            }
+        }
+
+    </script>
+    <!-- START google analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-56911203-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview', {
+            'page': location.pathname + location.search  + location.hash
+        });
+
+    </script>
+    <!-- END google analytics -->
+</head>
+<body onload="checkCookie()">
+<div class="wrapper">
+    <header>
+        <h1>Babelpish.github.io</h1>
+
         <p></p>
-        <p class="view"><a href="https://github.com/psygrammer">View the Project on GitHub <small>psygrammer</small></a></p>
-        <ul>
-          <li class="single"><a href="https://github.com/psygrammer/psygrammer.github.io">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+
+        <p><a href="https://www.facebook.com/groups/babelPish/">페이스북 그룹</a></p>
+
+        <p><a href="http://goo.gl/Z9jpnT">페이스북 자료</a></p>
+
+        <p class="view"><a href="https://github.com/babelPish"> GitHub </a></p>
+
+        <p><img src="img/d141204.gif" alt="대문" class="img-responsive img-thumbnail"></p>
+
+        <p id="age">바벨피쉬 </p>
+
+        <p><img id="babelfish" src="img/0.jpg" alt="바벨피쉬" class="img-responsive img-thumbnail"></p>
+
+    </header>
+    <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+            <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
+                    class="octicon octicon-link"></span></a>Welcome to babel pish Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <p> 사람의 언어, 기계의 언어 : 파이썬을 이용한 자연어처리 </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+    PART II (2015.2~2015.6)
+    2015년 2월 12일 - 2015년 6월
+    격주 목요일 저녁. 7시 30분~9시 30분/10시
+    장소: 토즈 타워점/강남2호점/강남점
+
 </code></pre>
+        <h3>[Book] <a href="http://www.amazon.com/Natural-Language-Processing-Python-Steven/dp/0596516495">Natural Language Processing with Python</a></h3>
+        <p>
+        <table>
+            <thead>
+            <tr>
+                <th align="left">회차</th>
+                <th align="left">날짜</th>
+                <th align="left">주제</th>
+                <th align="left">발표자</th>
+                <th align="left">후기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td align="left">Part II-1</td>
+                <td align="left">2/12/2015</td>
+                <td align="left">보강 A. 자연어처리 개론 및 최신동향</td>
+                <td align="left">신준수</td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-2</td>
+                <td align="left">2015</td>
+                <td align="left">보강 B. 코퍼스 언어학</td>
+                <td align="left"><a href="https://www.facebook.com/youngsook.song.1">송영숙</a></td>
+                <td align="left"></td>
+            </tr>
+            <tr>
+                <td align="left">Part II-3</td>
+                <td align="left">2015</td>
+                <td align="left">ch6. Learning to Classify Text</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-4</td>
+                <td align="left">2015</td>
+                <td align="left">ch7. Extracting Information from Text</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-5</td>
+                <td align="left">2015</td>
+                <td align="left">보강 C. 파이썬을 이용한 검색엔진 만들기</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-6</td>
+                <td align="left">2015</td>
+                <td align="left">ch8. Analyzing Sentence Structure</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-7</td>
+                <td align="left">2015</td>
+                <td align="left">ch9. Building Feature-Based Grammars</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-8</td>
+                <td align="left">2015</td>
+                <td align="left">ch10. Analyzing the Meaning of Sentences</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+            <tr>
+                <td align="left">Part II-9</td>
+                <td align="left">2015</td>
+                <td align="left">ch11. Managing Linguistic Data</td>
+                <td align="left"></td>
+                <td align="left"> </td>
+            </tr>
+        </table>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-    <footer>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+        <h3>[Book] <a href="http://www.amazon.com/Natural-Language-Processing-Python-Steven/dp/0596516495">Natural Language Processing with Python</a></h3>
+        <p>
+        <table>
+            <thead>
+            <tr>
+                <th align="left">회차</th>
+                <th align="left">날짜</th>
+                <th align="left">주제</th>
+                <th align="left">발표자</th>
+                <th align="left">후기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td align="left">Part I-1</td>
+                <td align="left">10/23/2014</td>
+                <td align="left"><a
+                        href="http://nbviewer.ipython.org/github/babelPish/nlp/blob/master/part1/ch01/ch01_language_processing_and_python.ipynb">
+                    ch 1. Language Processing and Python</a></td>
+                <td align="left"><a href="https://www.facebook.com/moodern">김무성</a></td>
+                <td align="left"><a href="doc/part1/a01.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-2</td>
+                <td align="left">11/ 6/2014</td>
+                <td align="left"><a href="http://goo.gl/DVpKkM">[보강 A. 파이썬 기초]</a> / <a href="https://github.com/babelPish/py">[숙제]</a></td>
+                <td align="left"><a href="https://www.facebook.com/kozazz">곽두환</a></td>
+                <td align="left"><a href="doc/part1/a02.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-3</td>
+                <td align="left">11/20/2014</td>
+                <td align="left"><a href="http://nbviewer.ipython.org/github/babelPish/nlp/blob/master/part1/ch02/ch02.ipynb">ch2. Accessing Text Corpora and Lexical Resources</a></td>
+                <td align="left"><a href="https://www.facebook.com/re4lfl0w">조근영</a></td>
+                <td align="left"><a href="doc/part1/a03.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-4</td>
+                <td align="left">12/ 4/2014</td>
+                <td align="left"> <a href="http://nbviewer.ipython.org/github/babelPish/nlp/blob/master/part1/sp_konlp_mecab/koNLPy.ipynb">보강 B. 한국어 처리 - 1) KoNLPy,2) 은전한닢+mecab</a></td>
+                <td align="left"><a href="https://www.facebook.com/zenajung00">정재윤</a></td>
+                <td align="left"><a href="doc/part1/a04a.html">ㅎㄱa /</a><a href="doc/part1/a04b.html">ㅎㄱb</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-5</td>
+                <td align="left">12/18/2014</td>
+                <td align="left"> <a href="http://nbviewer.ipython.org/github/babelPish/nlp/blob/master/part1/ch03/nltk%20chap3.ipynb">ch3. Processing Raw Text</a></td>
+                <td align="left"><a href="https://www.facebook.com/profile.php?id=100001858792450">박홍훈</a></td>
+                <td align="left"><a href="doc/part1/a05.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-6</td>
+                <td align="left">1/2/2015</td>
+                <td align="left"><a href="https://docs.google.com/presentation/d/1Ey1TLUnF2VnsXI7-2U1yps_4-GseoIGQ9BQtq5jF7vE/pub?start=false&loop=false&delayms=3000&slide=id.p">보강 C. 오픈소스 검색엔진 - Elasticsearch</a></td>
+                <td align="left"><a href="https://www.facebook.com/profile.php?id=100000916270933">김정주</a></td>
+                <td align="left"><a href="doc/part1/a06.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-7</td>
+                <td align="left">1/15/2015</td>
+                <td align="left">ch4. Writing Structured Programs / 자료자료..</td>
+                <td align="left"><a href="https://www.facebook.com/lexifdev">김슬</a></td>
+                <td align="left"><a href="doc/part1/a07.html">ㅎㄱ</a></td>
+            </tr>
+            <tr>
+                <td align="left">Part I-8</td>
+                <td align="left">1/29/2015</td>
+                <td align="left"><a href="http://nbviewer.ipython.org/github/babelPish/nlp/blob/master/part1/ch05/Ch%205%20categorizing%20and%20tagging%20words.ipynb">ch5. Categorizing and Tagging Words</a></td>
+                <td align="left"><a href="https://www.facebook.com/youngsook.song.1">송영숙</a></td>
+                <td align="left"><a href="doc/part1/a08.html">ㅎㄱ</a></td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
+    </section>
+</div>
+</body>
 </html>
