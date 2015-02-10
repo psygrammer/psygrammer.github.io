@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <meta property="og:title" content="바벨피쉬" />
-    <meta property="og:description" content="사람의 언어, 기계의 언어 : 파이썬을 이용한 자연어처리" />
+    <meta property="og:title" content="싸이그래머" />
+    <meta property="og:description" content="심리학과 IT의 결합 - 심리, 프로그래밍, 통계, 데이터분석, AI" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://babelpish.github.io" />
-    <meta property="og:image" content="http://babelpish.github.io/img/logo.jpg" />
-    <title>Babelpish.github.io by babelPish</title>
+    <meta property="og:url" content="http://psygrammer.github.io" />
+    <meta property="og:image" content="http://psygrammer.github.io/img/logo.jpg" />
+    <title>Psygrammer.github.io by psygrammer</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -19,51 +19,6 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- babel fish grow -->
-    <script>
-        var defaultExdays = 100;
-
-        function setCookie(cname,cvalue,exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires=" + d.toGMTString();
-            document.cookie = cname+"="+cvalue+"; "+expires;
-        }
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1);
-                if (c.indexOf(name) != -1) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function checkCookie() {
-            var d = new Date();
-            var user=getCookie("username");
-            if (user != "") {
-
-                $("#age").text("바벨피쉬 : " + parseInt((d-user)/(24*3600*1000)) + " 살");
-                if(d - user > 30*24*60*60*1000){
-                    $("#babelfish").attr("src", "img/max.jpg");
-                }else{
-                    $("#babelfish").attr("src", "img/"+parseInt((d-user)/(24*3600*1000))+".jpg");
-                }
-                setCookie("username",user, defaultExdays);
-
-            }else {
-                //show dead fish
-                $("#babelfish").attr("src", "img/dead.jpg");
-                //dead or  first time
-                setCookie("username", d.getTime(), defaultExdays);
-            }
-        }
-
     </script>
     <!-- START google analytics -->
     <script>
@@ -72,19 +27,19 @@
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-56911203-1', 'auto');
+        ga('create', 'UA-59571021-1', 'auto');
         ga('require', 'displayfeatures');
         ga('send', 'pageview', {
             'page': location.pathname + location.search  + location.hash
         });
-
     </script>
+    
     <!-- END google analytics -->
 </head>
 <body onload="checkCookie()">
 <div class="wrapper">
     <header>
-        <h1>Babelpish.github.io</h1>
+        <h1>Psygrammer.github.io</h1>
 
         <p></p>
 
@@ -106,7 +61,7 @@
             <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
                     class="octicon octicon-link"></span></a>Welcome to babel pish Pages.</h3>
 
-        <p> 사람의 언어, 기계의 언어 : 파이썬을 이용한 자연어처리 </p>
+        <p> 심리학과 IT의 결합 - 심리, 프로그래밍, 통계, 데이터분석, AI </p>
 
 <pre><code>
     PART II (2015.2~2015.6)
